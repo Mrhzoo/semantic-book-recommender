@@ -26,5 +26,5 @@ Live demo (if deployed): https://huggingface.co/spaces/YOURUSERNAME/semantic-boo
 - **Data**: Google Books-derived dataset with emotion analysis
 
 ## Future Improvements (Ideas)
-GPU acceleration for embeddings
-Better error messages & loading statescd semantic-book-recommender
+-GPU acceleration for embeddings
+-Better error messages & loading statescd semantic-book-recommender
