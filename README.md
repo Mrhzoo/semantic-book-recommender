@@ -27,4 +27,5 @@ Live demo (if deployed): https://huggingface.co/spaces/YOURUSERNAME/semantic-boo
 
 ## Future Improvements (Ideas)
 -GPU acceleration for embeddings
+
 -Better error messages & loading statescd semantic-book-recommender
