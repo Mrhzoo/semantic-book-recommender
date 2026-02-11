@@ -1,0 +1,63 @@
+#services:
+#  app:
+#    build: .
+#    ports:
+#      - "7860:7860"
+#    env_file:
+#      - .env
+#    volumes:
+#      - ./chroma_data:/app/chroma_data
+#    depends_on:
+#      - chroma
+#
+#  chroma:
+#    image: chromadb/chroma:latest
+#    ports:
+#      - "8000:8000"
+#    volumes:
+#      - ./chroma_data:/chroma/chroma
+#    environment:
+#      - IS_PERSISTENT=TRUE
+#      - PERSIST_DIRECTORY=/chroma/chroma
+#
+#networks:
+#  default:
+#    name: book_recommender_network
+
+
+
+services:
+  app:
+    build: .
+    ports:
+      - "7860:7860"
+    secrets:
+      - openai_key
+    volumes:
+      - ./chroma_data:/app/chroma_data
+    depends_on:
+      - chroma
+
+  chroma:
+    image: chromadb/chroma:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./chroma_data:/chroma/chroma
+    environment:
+      - IS_PERSISTENT=TRUE
+      - PERSIST_DIRECTORY=/chroma/chroma
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8000/api/v1/heartbeat" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+secrets:
+  openai_key:
+    file: ./.secrets/openai_key.txt   # we create this file
+
+networks:
+  default:
+    name: book_recommender_network

@@ -1,0 +1,53 @@
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+
+# Git
+.git
+.gitignore
+
+# IDE / editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs and temp files
+*.log
+*.tmp
+*.temp
+
+## Large data files (optional — only if you don't want them in image)
+#*.csv
+#*.xlsx
+#books_*.csv
+#tagged_description.txt   # ← optional, if it's large and you mount it separately
+
+# Environment / secrets
+.env
+.env.local
+.env.*
+*.env
+.secrets/
+
+# Mac / Windows junk
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+
+
+chroma_data/
