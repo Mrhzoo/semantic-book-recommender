@@ -7,8 +7,7 @@ AI-powered book recommendation system that finds books based on:
 
 Built with **Gradio** (beautiful UI), **LangChain + Chroma** (vector search), and **Docker** (containerized).
 
-Live demo (if deployed): https://huggingface.co/spaces/YOURUSERNAME/semantic-book-recommender  
-(or Render/Fly.io link when you add it)
+
 
 ## Features
 - Natural language search: "A story about forgiveness in a small town"
